@@ -1,0 +1,107 @@
+<resources>
+    <string name="app_name">Alpha Learn</string>
+    <string name="hello_swift">Hello, Swift!</string>
+    <string name="what_do_you_wanna_learn_today">What do you wanna learn today?</string>
+    <string name="search">Search</string>
+    <string name="try_out">Try Out</string>
+    <string name="see_all">SEE ALL</string>
+    <string name="astronomics">Astronomics</string>
+    <string name="geography">Geography</string>
+    <string name="biology">Biology</string>
+    <string name="chemistry">Chemistry</string>
+    <string name="physics">Physics</string>
+    <string name="mathematics">Mathematics</string>
+    <string name="earthiness">Earthiness</string>
+    <string name="informatics">Informatics</string>
+    <string name="economy">Economy</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="you_have_completed_the_tryout_nyou_have_scored">You have completed the Tryout!\nYou have scored</string>
+    <string name="_92">92%</string>
+    <string name="see_details_to_see_a_detailed_explanation_of_the_answers_to_the_tryout_results">“See details” to see a detailed explanation of the answers to the tryout results</string>
+    <string name="back_to_home">Back to Home</string>
+    <string name="see_details">See Details</string>
+    <string name="see_details_to_see_a_detailed_of_the_answers_to_the_quiz_results">“See details” to see a detailed of the answers to the quiz results</string>
+    <string name="retake">Retake</string>
+    <string name="back_to_course">Back to Course</string>
+    <string name="nature_of_light_waves">Nature of Light Waves</string>
+    <string name="by_sarah_william">By Sarah William</string>
+    <string name="default_text">-</string>
+    <string name="separator">•</string>
+    <string name="title_of_try_out">Title of Try Out</string>
+    <string name="_50_soal">50 Soal</string>
+    <string name="start">Start</string>
+    <string name="tap_to_open_navigation">Tap to open navigation!</string>
+    <string name="question_no_2">Question no. 2</string>
+    <string name="_00_42_59">00 : 42 : 59</string>
+    <string name="finish">Finish</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="answer">Answer :</string>
+    <string name="c">C</string>
+    <string name="you_must_learn_the_material_below">You Must Learn the Material Below!</string>
+    <string name="link_of_title_of_subtopic"><u>Link of Title of Subtopic...</u></string>
+    <string name="apakah_kamu_yakin_untuk_menyelesaikan_soal_ini">Apakah kamu yakin untuk menyelesaikan soal ini?</string>
+    <string name="akhiri">Akhiri</string>
+    <string name="batal">Batal</string>
+    <string name="courses">Courses</string>
+    <string name="all">All</string>
+    <string name="title_submodule">Title Submodule</string>
+    <string name="course_name">Course name</string>
+    <string name="rating">5.0</string>
+    <string name="author">By Sarah William</string>
+    <string name="title_course">Title Course</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="join_course">Join Course</string>
+    <string name="description">Description</string>
+    <string name="example">Sifat gelombang cahaya adalah salah satu aspek penting dalam memahami fenomena optik dan perilaku cahaya. Gelombang cahaya memiliki karakteristik sebagai gelombang elektromagnetik yang terdiri dari medan listrik dan medan magnetik yang saling berinteraksi. Beberapa sifat gelombang cahaya yang penting termasuk panjang gelombang, frekuensi, amplitudo, kecepatan, dan polarisasi.</string>
+    <string name="instructor">Instructor</string>
+    <string name="rules">You must complete the quiz before the time ends.</string>
+    <string name="rules2">If the score you get is below the passing requirements, you can retake it.</string>
+    <string name="question">For observers near the equator, the position of the highest point of Aries at sunset will take place at...</string>
+    <string name="confirm_message">Apakah kamu yakin untuk menyelesaikan soal ini?</string>
+    <string name="log_in">Log In</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="don_t_have_an_account">Don`t have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="or">OR</string>
+    <string name="for_observers_near_the_equator_the_position_of_the_highest_point_of_aries_at_sunset_will_take_place_at">For observers near the equator, the position of the highest point of Aries at sunset will take place at...</string>
+
+    <string-array name="data_name">
+        <item>Audi A5</item>
+        <item>Bentley Continental GT</item>
+        <item>Honda Brio</item>
+        <item>Honda Civic Turbo</item>
+        <item>Honda Jazz</item>
+        <item>KIA Sportage</item>
+        <item>Mercedes Benz E-Class</item>
+        <item>Range Rover Evoque</item>
+        <item>Toyota New Hilux</item>
+        <item>Mitsubishi X-Pander</item>
+    </string-array>
+    <string-array name="data_type">
+        <item>Coupe</item>
+        <item>Station Wagon</item>
+        <item>Hatchback</item>
+        <item>Sedan</item>
+        <item>Hatchback</item>
+        <item>Crossover</item>
+        <item>Convertible</item>
+        <item>SUV</item>
+        <item>Double Cabin</item>
+        <item>MPV</item>
+    </string-array>
+    <integer-array name="data_photo">
+        <item>@drawable/audia5</item>
+        <item>@drawable/audia5</item>
+        <item>@drawable/audia5</item>
+        <item>@drawable/audia5</item>
+        <item>@drawable/audia5</item>
+        <item>@drawable/audia5</item>
+        <item>@drawable/audia5</item>
+        <item>@drawable/audia5</item>
+        <item>@drawable/audia5</item>
+        <item>@drawable/audia5</item>
+    </integer-array>
+</resources>

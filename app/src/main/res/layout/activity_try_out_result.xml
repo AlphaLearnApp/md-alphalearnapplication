@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.tryoutresult.TryOutResultActivity"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:paddingHorizontal="46dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/congratulations"
+            android:textColor="@color/colorWhite"
+            style="@style/heading1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded_mustard_2"
+            android:layout_marginTop="25dp"
+            android:paddingVertical="25dp"
+            android:paddingHorizontal="15dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/you_have_completed_the_tryout_nyou_have_scored"
+                android:textAlignment="center"
+                style="@style/textReguler" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="@string/_92"
+                android:textAlignment="center"
+                style="@style/heading1"
+                android:layout_marginTop="25dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/illustration_congrats"
+                android:layout_marginHorizontal="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/see_details_to_see_a_detailed_explanation_of_the_answers_to_the_tryout_results"
+                android:textAlignment="center"
+                style="@style/textMedium" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp"
+            android:layout_marginHorizontal="26dp">
+
+            <Button
+                android:id="@+id/btn_back_to_home"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rounded_mustard"
+                android:text="@string/back_to_home"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                style="@style/textBig"
+                android:layout_marginEnd="4dp"/>
+
+            <Button
+                android:id="@+id/btn_see_details"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rounded_mustard"
+                android:text="@string/see_details"
+                android:textColor="@color/colorWhite"
+                android:textAllCaps="false"
+                style="@style/textBig"
+                android:layout_marginStart="4dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

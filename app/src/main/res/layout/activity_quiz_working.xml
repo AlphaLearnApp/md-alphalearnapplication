@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.quiz.QuizWorkingActivity"
+    android:background="@color/colorPrimary">
+
+    <ImageButton
+        android:id="@+id/ib_navigation"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:src="@drawable/baseline_keyboard_double_arrow_right_24"
+        android:background="@drawable/rectangle_button_background"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="60dp"/>
+
+    <TextView
+        android:id="@+id/tv_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Question no. 2"
+        app:layout_constraintTop_toBottomOf="@id/ib_navigation"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/textBig"
+        android:textColor="@color/white"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/timer_white"
+        app:layout_constraintEnd_toStartOf="@id/tv_time"
+        app:layout_constraintTop_toTopOf="@id/tv_number"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_number"/>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:42:59"
+        app:layout_constraintTop_toTopOf="@id/tv_number"
+        app:layout_constraintBottom_toBottomOf="@id/tv_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/white"
+        style="@style/textBig"
+        android:layout_marginEnd="30dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/btn_finish"
+        app:layout_constraintTop_toBottomOf="@id/tv_number"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/question"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="30dp"
+                style="@style/textMedium"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:justificationMode="inter_word"
+                android:textSize="14sp"/>
+
+            <Button
+                android:id="@+id/btn_answer1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="A. March 21"
+                android:paddingStart="24dp"
+                style="@style/textMedium"
+                android:textAllCaps="false"
+                android:background="@drawable/bg_button_choose"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_question"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:gravity="left|center"/>
+
+            <Button
+                android:id="@+id/btn_answer2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="B. August 45"
+                style="@style/textMedium"
+                android:textAllCaps="false"
+                android:paddingStart="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_answer1"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:gravity="left|center"
+                android:background="@drawable/bg_button_choose"/>
+
+            <Button
+                android:id="@+id/btn_answer3"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="C. March 22"
+                android:textAllCaps="false"
+                android:paddingStart="24dp"
+                android:background="@drawable/bg_button_choose"
+                android:layout_marginTop="8dp"
+                style="@style/textMedium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_answer2"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:gravity="left|center"/>
+
+            <Button
+                android:id="@+id/btn_answer4"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="D. April 45"
+                style="@style/textMedium"
+                android:textAllCaps="false"
+                android:paddingStart="24dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_button_choose"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_answer3"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:gravity="left|center"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_finish"
+        android:layout_width="70dp"
+        android:layout_height="34dp"
+        android:text="@string/finish"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        style="@style/textBig"
+        android:background="@drawable/bg_rounded_warning"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="30dp"/>
+
+    <Button
+        android:id="@+id/btn_previous"
+        android:layout_width="70dp"
+        android:layout_height="34dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:text="@string/previous"
+        style="@style/textBig"
+        android:background="@drawable/bg_rounded_mustard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_next"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="30dp"/>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="70dp"
+        android:layout_height="34dp"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_rounded_mustard"
+        style="@style/textBig"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

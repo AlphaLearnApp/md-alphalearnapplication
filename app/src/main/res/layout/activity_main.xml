@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded_top_primary">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/illustration_man"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="-3dp" />
+
+            <LinearLayout
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/large_100"
+                android:paddingHorizontal="@dimen/normal_115"
+                android:paddingBottom="@dimen/normal_135">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="start">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_user"
+                        android:layout_width="@dimen/image_36_custom"
+                        android:layout_height="@dimen/image_36_custom"
+                        android:src="@drawable/ic_launcher_background"
+                        android:layout_weight="0" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/iv_notification_home"
+                        android:paddingVertical="@dimen/small_75"
+                        android:layout_width="@dimen/image_36_custom"
+                        android:layout_height="@dimen/image_36_custom"
+                        android:background="@drawable/bg_circle_white"
+                        android:src="@drawable/icon_notif"
+                        android:layout_weight="0"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_hello_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hello_swift"
+                    style="@style/heading1"
+                    android:textColor="@color/colorWhite"
+                    android:layout_marginTop="@dimen/small_125" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/what_do_you_wanna_learn_today"
+                    style="@style/textMedium"
+                    android:textColor="@color/colorWhite" />
+
+                <EditText
+                    android:id="@+id/et_search_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/normal_275"
+                    android:background="@drawable/bg_circle_white"
+                    android:drawableEnd="@drawable/icon_search"
+                    android:drawableTint="@android:color/darker_gray"
+                    android:paddingStart="@dimen/normal_100"
+                    android:drawablePadding="@dimen/normal_100"
+                    android:paddingEnd="@dimen/normal_100"
+                    android:hint="@string/search"
+                    android:textColorHint="@color/colorSoftGrey"
+                    android:fontFamily="@font/mulish_bold"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_chat"
+                    android:layout_marginTop="@dimen/small_125"/>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingVertical="18dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginHorizontal="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/try_out"
+                    style="@style/heading2" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:id="@+id/tv_see_all_try_out"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/see_all"
+                        style="@style/textBig"
+                        android:layout_marginEnd="@dimen/small_100" />
+
+                    <ImageView
+                        android:layout_width="@dimen/small_100"
+                        android:layout_height="@dimen/small_100"
+                        android:src="@drawable/icon_arrow_right" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp"
+                android:layout_marginHorizontal="18dp">
+
+                <LinearLayout
+                    android:id="@+id/card_astronomics"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_weight="1" >
+
+                    <LinearLayout
+                        android:id="@+id/ib_astronomics"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_rounded_primary"
+                        android:paddingVertical="11dp"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="8dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/icon_astronomics" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/astronomics"
+                        style="@style/textSmall"
+                        android:layout_marginTop="5dp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:id="@+id/card_geography"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/ib_geography"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_rounded_green"
+                        android:layout_weight="1"
+                        android:paddingVertical="11dp"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="8dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/icon_geography" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/geography"
+                        style="@style/textSmall"
+                        android:layout_marginTop="5dp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:id="@+id/card_biology"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/ib_biology"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_rounded_pink"
+                        android:layout_weight="1"
+                        android:paddingVertical="11dp"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="8dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/icon_biology" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/biology"
+                        style="@style/textSmall"
+                        android:layout_marginTop="5dp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:id="@+id/card_chemistry"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/ib_chemistry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_rounded_mustard"
+                        android:layout_weight="1"
+                        android:paddingVertical="11dp"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="8dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/icon_chemistry" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/chemistry"
+                        style="@style/textSmall"
+                        android:layout_marginTop="5dp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:id="@+id/card_mathematics"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/ib_mathematics"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_rounded_pink"
+                        android:layout_weight="1"
+                        android:paddingVertical="11dp"
+                        android:gravity="center"
+                        android:layout_marginHorizontal="8dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/icon_mathematics" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mathematics"
+                        style="@style/textSmall"
+                        android:layout_marginTop="5dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Course"
+                    style="@style/heading2" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tv_see_all_course"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/see_all"
+                    style="@style/textBig"
+                    android:layout_marginEnd="@dimen/small_100"/>
+
+                <ImageView
+                    android:id="@+id/iv_see_all_course"
+                    android:layout_width="@dimen/small_100"
+                    android:layout_height="@dimen/small_100"
+                    android:src="@drawable/icon_arrow_right" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="18dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_title_course"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/layout_item_title_course"
+                    android:layout_marginTop="10dp" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_course"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/layout_item_course"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="18dp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

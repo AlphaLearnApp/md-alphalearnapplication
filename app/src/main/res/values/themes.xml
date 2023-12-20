@@ -1,0 +1,50 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AlphaLearn" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorSecondary</item>
+        <item name="colorOnPrimary">@color/colorWhite</item>
+
+        <!-- Status bar color. -->
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="Theme.AlphaLearn" parent="Base.Theme.AlphaLearn" />
+
+    <style name="heading1" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:fontFamily">@font/jost_semibold</item>
+        <item name="android:textSize">@dimen/h5</item>
+    </style>
+
+    <style name="heading2" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:fontFamily">@font/jost_semibold</item>
+        <item name="android:textSize">@dimen/title</item>
+    </style>
+
+    <style name="textBig" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:fontFamily">@font/mulish_bold</item>
+        <item name="android:textSize">@dimen/subtitle_2</item>
+    </style>
+
+    <style name="textReguler" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:fontFamily">@font/mulish_bold</item>
+        <item name="android:textSize">@dimen/caption</item>
+    </style>
+
+    <style name="textMedium" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:fontFamily">@font/mulish_medium</item>
+        <item name="android:textSize">@dimen/caption</item>
+    </style>
+
+    <style name="textSmall" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:fontFamily">@font/mulish</item>
+        <item name="android:textSize">@dimen/overline</item>
+    </style>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.quiz.OptionsDialogFragment">
+
+    <TextView
+        android:id="@+id/tv_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/confirm_message"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/textMedium"
+        android:gravity="center"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_akhiri"
+        android:layout_width="70dp"
+        android:layout_height="34dp"
+        android:text="@string/akhiri"
+        android:layout_marginTop="30dp"
+        style="@style/textReguler"
+        android:textAllCaps="false"
+        android:background="@drawable/bg_rounded_warning"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/tv_confirm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_batal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="30dp"/>
+
+    <Button
+        android:id="@+id/btn_batal"
+        android:layout_width="70dp"
+        android:layout_height="34dp"
+        android:text="@string/batal"
+        style="@style/textReguler"
+        android:textAllCaps="false"
+        android:background="@drawable/bg_rounded_gray"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_akhiri"
+        app:layout_constraintTop_toBottomOf="@id/tv_confirm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="30dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

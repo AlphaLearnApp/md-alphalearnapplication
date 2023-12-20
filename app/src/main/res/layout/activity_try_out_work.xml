@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.tryoutwork.TryOutWorkActivity"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginHorizontal="6dp">
+
+            <LinearLayout
+                android:id="@+id/btn_navigation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_rounded_mustard"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="8dp"
+                android:layout_marginEnd="20dp">
+
+                <ImageView
+                    android:layout_width="8dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/icon_arrow_right"
+                    app:tint="@color/colorWhite" />
+
+                <ImageView
+                    android:layout_width="8dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/icon_arrow_right"
+                    app:tint="@color/colorWhite" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_arrow_back"
+                android:layout_marginEnd="10dp"/>
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="34dp"
+                android:text="@string/tap_to_open_navigation"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                style="@style/textMedium"
+                android:background="@drawable/bg_rounded_mustard" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="26dp"
+            android:layout_marginHorizontal="6dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/question_no_2"
+                android:textColor="@color/colorWhite"
+                style="@style/textBig" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/baseline_access_time_24"
+                app:tint="@color/colorWhite"
+                android:layout_marginEnd="6dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_00_42_59"
+                android:textColor="@color/colorWhite"
+                style="@style/textBig" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rounded_white"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:scrollbars="vertical"
+            android:fadeScrollbars="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_white"
+                android:padding="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_text_question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/for_observers_near_the_equator_the_position_of_the_highest_point_of_aries_at_sunset_will_take_place_at"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    android:fontFamily="@font/mulish_medium" />
+
+                <RadioGroup
+                    android:id="@+id/rg_type_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="35dp">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/rb_option_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/image_50_custom"
+                        android:layout_weight="1"
+                        android:background="@drawable/rb_selector"
+                        android:button="@android:color/transparent"
+                        android:text="A. March 21"
+                        android:fontFamily="@font/mulish"
+                        android:textColor="@color/colorBlack"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="20dp"/>
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/rb_option_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/image_50_custom"
+                        android:textColor="@color/colorBlack"
+                        android:background="@drawable/rb_selector"
+                        android:button="@android:color/transparent"
+                        android:layout_weight="1"
+                        android:text="B. Auguts 45"
+                        android:fontFamily="@font/mulish"
+                        android:layout_marginBottom="10dp"
+                        android:checked="true"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="20dp"/>
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/rb_option_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/image_50_custom"
+                        android:textColor="@color/colorBlack"
+                        android:background="@drawable/rb_selector"
+                        android:button="@android:color/transparent"
+                        android:layout_weight="1"
+                        android:text="C. March 22"
+                        android:fontFamily="@font/mulish"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="20dp"/>
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/rb_option_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/image_50_custom"
+                        android:textColor="@color/colorBlack"
+                        android:background="@drawable/rb_selector"
+                        android:button="@android:color/transparent"
+                        android:layout_weight="1"
+                        android:text="D. April 45"
+                        android:fontFamily="@font/mulish"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="20dp"/>
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_finish"
+                android:layout_width="70dp"
+                android:layout_height="34dp"
+                android:text="@string/finish"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                style="@style/textBig"
+                android:background="@drawable/bg_rounded_maroon" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_prev"
+                android:layout_width="70dp"
+                android:layout_height="34dp"
+                android:text="@string/previous"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                style="@style/textBig"
+                android:background="@drawable/bg_rounded_mustard"
+                android:layout_marginEnd="18dp"/>
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="70dp"
+                android:layout_height="34dp"
+                android:text="@string/next"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                style="@style/textBig"
+                android:background="@drawable/bg_rounded_mustard" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

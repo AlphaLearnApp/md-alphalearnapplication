@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#102346</color>
+    <color name="colorSecondary">#f19b40</color>
+    <color name="colorAccent">#428e8d</color>
+    <color name="colorDanger">#d13e35</color>
+    <color name="colorGreen">#4aa359</color>
+    <color name="colorPink">#d54960</color>
+    <color name="colorRed">#d54960</color>
+    <color name="colorMustard">#e9913a</color>
+    <color name="colorSoftMustard">#fbe5ce</color>
+    <color name="colorPurple">#30357a</color>
+    <color name="colorBlack">#FF000000</color>
+    <color name="colorWhite">#FFFFFFFF</color>
+    <color name="colorDarkerGrey">#5e5d5d</color>
+    <color name="colorGrey">#91919e</color>
+    <color name="colorSoftGrey">#BFBABA</color>
+    <color name="colorLightGrey">#d9d9d9</color>
+    <color name="colorMaroon">#a4281e</color>
+    <color name="colorWarning">#a4281e</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="buttonSelectedColor">#FF9620</color>
+</resources>
