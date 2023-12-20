@@ -1,16 +1,15 @@
 package com.aplhaacademy.alphalearn.ui.fragment
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.aplhaacademy.alphalearn.R
 import com.aplhaacademy.alphalearn.databinding.ActivityMainFragmentBinding
-import com.aplhaacademy.alphalearn.ui.login.LoginActivity
 import com.aplhaacademy.alphalearn.ui.main.MainActivity
 
 class MainFragmentActivity : AppCompatActivity() {
@@ -117,6 +116,5 @@ class MainFragmentActivity : AppCompatActivity() {
 
         button.setBackgroundResource(R.drawable.bg_rounded_mustard)
         button.setTextColor(ContextCompat.getColor(this, R.color.white))
-
     }
 }

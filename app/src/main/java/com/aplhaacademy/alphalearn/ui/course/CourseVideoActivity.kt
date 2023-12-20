@@ -24,20 +24,20 @@ class CourseVideoActivity : AppCompatActivity() {
         binding = ActivityCourseVideoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val movieList = listOf(
-            Topic("Schindler's List", "Biography, Drama, History"),
-            Topic("Pulp Fiction", "Crime, Drama"),
-            Topic("No Country for Old Men", "Crime, Drama, Thriller"),
-            Topic("Léon: The Professional", "Crime, Drama, Thriller"),
-            Topic("Fight Club", "Drama"),
-            Topic("Forrest Gump", "Drama, Romance"),
-            Topic("The Shawshank Redemption", "Crime, Drama"),
-            Topic("The Godfather", "Crime, Drama"),
-            Topic("A Beautiful Mind", "Biography, Drama"),
-            Topic("Good Will Hunting", "Drama")
+        val topicList = listOf(
+            Topic("Pengantar Cuaca dan Iklim", "Definisi cuaca dan iklim", "Proses Pembentukan Atmosfer Bumi", "Komponen cuaca dan iklim", "Knowledge Check"),
+            Topic("Sirkulasi Atmosfer", "Sirkulasi atmosfer pada taraf global", "Angin", "Sistem tiga sel", "Knowledge Check"),
+            Topic("Siklus Hidrologi", "Jenis Siklus Hidrologi", "Penguapan", "Perawanan", "Knowledge Check"),
+            Topic("Massa Udara", "Definisi dan ciri massa udara", "Pembentukan massa udara dan modifikasinya", "Jenis massa udara dan modifikasinya", "Knowledge Check"),
+            Topic("Front", "Definisi front","Jenis front", "Dampak front", "Knowledge Check"),
+            Topic("Klasifikasi Iklim", "Dasar klasifikasi iklim", "Jenis-jenis klasifikasi iklim", "Pembagian zona iklim dunia", "Knowledge Check"),
+            Topic("Bencana dan Anomali Meteorologis", "Siklon tropis", "Tornado, water spout", "Thunderstorm", "Knowledge Check"),
+            Topic("Pemanasan Global dan Perubahan Iklim", "Definisi dan perbedaan antara pemanasan global dan perubahan iklim", "Kontroversi pemanasan global dan perubahan iklim", "Penyebab dan akibat pemanasan global", "Knowledge Check"),
+            Topic("Isu dan Kebijakan Terkait Iklim", "Konferensi Perubahan Iklim", "Protokol Montreal", "Rio Earth Summit", "Knowledge Check"),
+            Topic("Observasi Meteorologi dan Penyajian Data", "Kontroversi pemanasan global dan perubahan iklim", "Penyebab dan akibat pemanasan global", "Sebab-akibat perubahan iklim", "Knowledge Check"),
         )
 
-        val adapter = ListTopicAdapter(movieList)
+        val adapter = ListTopicAdapter(topicList)
 
         val recyclerView: RecyclerView = findViewById(R.id.rv_topic)
 

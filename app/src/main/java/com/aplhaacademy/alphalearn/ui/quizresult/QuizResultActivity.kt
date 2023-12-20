@@ -17,6 +17,9 @@ class QuizResultActivity : AppCompatActivity() {
         binding = ActivityQuizResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val score = intent.getIntExtra(EXTRA_SCORE, 0)
+        binding.tvScore.text = "$score %"
+
         onAction()
     }
 
@@ -42,5 +45,9 @@ class QuizResultActivity : AppCompatActivity() {
                 )
             }
         }
+    }
+
+    companion object{
+        const val EXTRA_SCORE = "extra_score"
     }
 }

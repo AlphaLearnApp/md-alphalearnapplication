@@ -18,11 +18,11 @@ class PlaybackService : MediaSessionService() {
     private fun initializeSessionAndPlayer() {
 
         val videoItem = MediaItem.Builder()
-            .setUri("https://github.com/dicodingacademy/assets/releases/download/release-video/VideoDicoding.mp4")
+            .setUri("https://drive.google.com/file/d/1_F42VYCZOqzTfJLIMxGU95kXyFjwoU2d/view?usp=sharing")
             .setMediaMetadata(
                 MediaMetadata.Builder()
-                    .setTitle("Bersama Dicoding, Kembangkan Dirimu Menjadi Talenta Digital Berstandar Global")
-                    .setArtist("Dicoding")
+                    .setTitle("Definisi cuaca dan iklim")
+                    .setArtist("Alpha Learn")
                     .build()
             ).build()
 

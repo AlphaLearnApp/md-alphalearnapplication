@@ -36,8 +36,7 @@ class ListCourseAdapter(private val listCourse: ArrayList<CourseTopic>) : Recycl
         holder.tvTitle.text = title
         holder.tvName.text = name
         holder.itemView.setOnClickListener {
-            val intentDetail = Intent(holder.itemView.context, CourseDetailActivity::class.java)
-            holder.itemView.context.startActivity(intentDetail)
+            onItemClickCallback.onItemClicked(listCourse[position])
         }
     }
     interface OnItemClickCallback

@@ -1,6 +1,7 @@
 package com.aplhaacademy.alphalearn.data.model
 
 import android.os.Parcelable
+import com.aplhaacademy.alphalearn.R
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
