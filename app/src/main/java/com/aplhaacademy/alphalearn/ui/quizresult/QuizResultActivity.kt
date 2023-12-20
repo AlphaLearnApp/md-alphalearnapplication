@@ -1,15 +1,12 @@
 package com.aplhaacademy.alphalearn.ui.quizresult
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.aplhaacademy.alphalearn.R
+import androidx.appcompat.app.AppCompatActivity
 import com.aplhaacademy.alphalearn.databinding.ActivityQuizResultBinding
 import com.aplhaacademy.alphalearn.ui.fragment.MainFragmentActivity
-import com.aplhaacademy.alphalearn.ui.main.MainActivity
 import com.aplhaacademy.alphalearn.ui.quiz.QuizDetailActivity
 import com.aplhaacademy.alphalearn.ui.quizrecommendation.QuizRecomActivity
-import com.aplhaacademy.alphalearn.ui.tryoutdiscuss.TryOutDiscussActivity
 
 class QuizResultActivity : AppCompatActivity() {
 
