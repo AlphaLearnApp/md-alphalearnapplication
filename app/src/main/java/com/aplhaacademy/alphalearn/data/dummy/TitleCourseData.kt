@@ -14,7 +14,7 @@ object TitleCourseData {
         "Mathematics",
         "Earthiness",
         "Informatics",
-        "Informatics"
+        "Economy"
     )
 
     private val status = arrayOf(

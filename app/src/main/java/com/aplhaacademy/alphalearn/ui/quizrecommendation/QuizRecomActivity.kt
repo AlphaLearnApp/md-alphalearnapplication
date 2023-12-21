@@ -1,5 +1,6 @@
 package com.aplhaacademy.alphalearn.ui.quizrecommendation
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +15,7 @@ import com.aplhaacademy.alphalearn.data.model.Question
 import com.aplhaacademy.alphalearn.databinding.ActivityQuizRecomBinding
 import com.aplhaacademy.alphalearn.databinding.LayoutDialogCancelBinding
 import com.aplhaacademy.alphalearn.databinding.LayoutNavigationNumberBinding
+import com.aplhaacademy.alphalearn.ui.main.MainActivity
 
 class QuizRecomActivity : AppCompatActivity() {
 
@@ -24,7 +26,7 @@ class QuizRecomActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        var binding = ActivityQuizRecomBinding.inflate(layoutInflater)
+        binding = ActivityQuizRecomBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         initData()
@@ -69,7 +71,6 @@ class QuizRecomActivity : AppCompatActivity() {
         bindingAlert.btnClose.setOnClickListener {
             alertDialog.dismiss()
         }
-
         alertDialog.show()
 
     }
@@ -87,6 +88,10 @@ class QuizRecomActivity : AppCompatActivity() {
         bindingAlert.apply {
             btnDone.setOnClickListener {
                 alertDialog.dismiss()
+                startActivity(
+                    Intent(this@QuizRecomActivity, MainActivity::class.java)
+                )
+                finishAffinity()
             }
 
             btnCancel.setOnClickListener {

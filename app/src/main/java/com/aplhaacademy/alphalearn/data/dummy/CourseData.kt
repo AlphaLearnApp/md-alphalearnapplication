@@ -98,16 +98,36 @@ object CourseData {
         "Astronomics",
         "Geography",
         "Biology",
+        "Chemistry",
+        "Physics",
+        "Mathematics",
+        "Earthiness",
+        "Informatics",
+        "Economy"
     )
 
     private val titleCourses = arrayOf(
-        "Nature of Light Waves",
-        "Genetic Material Substance",
-        "System of Linear Equations",
-        "Nature of Light Waves",
+        "Title of Astronomics Course",
+        "Title of Chemistry Course",
+        "Title of Biology Course",
+        "Iklim dan Perubahan Iklim",
+        "Oseanografi dan Pengelolaan Wilayah DAS, Pesisir, dan Laut",
+        "Kebencanaan dan Manajemen Bencana",
+        "Title of Physics Course",
+        "Title of Mathematics Course",
+        "Title of Informatics Course",
+        "Title of Earthiness Course",
+        "Title of Economy Course",
     )
 
     private val authors = arrayOf(
+        "Sarah William",
+        "Sarah William",
+        "Sarah William",
+        "Sarah William",
+        "Sarah William",
+        "Sarah William",
+        "Sarah William",
         "Sarah William",
         "Sarah William",
         "Sarah William",
@@ -119,13 +139,27 @@ object CourseData {
         "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3R1ZHl8ZW58MHwwfDB8fHww",
         "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3R1ZHl8ZW58MHwwfDB8fHww",
         "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3R1ZHl8ZW58MHwwfDB8fHww",
+        "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3R1ZHl8ZW58MHwwfDB8fHww",
+        "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3R1ZHl8ZW58MHwwfDB8fHww",
+        "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3R1ZHl8ZW58MHwwfDB8fHww",
+        "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3R1ZHl8ZW58MHwwfDB8fHww",
+        "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3R1ZHl8ZW58MHwwfDB8fHww",
+        "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3R1ZHl8ZW58MHwwfDB8fHww",
+        "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3R1ZHl8ZW58MHwwfDB8fHww",
     )
 
     private val rates = arrayOf(
         5.0,
         4.8,
         4.8,
-        5.0
+        5.0,
+        5.0,
+        4.8,
+        4.8,
+        5.0,
+        5.0,
+        4.8,
+        4.8,
     )
 
     val listData: ArrayList<Course>
