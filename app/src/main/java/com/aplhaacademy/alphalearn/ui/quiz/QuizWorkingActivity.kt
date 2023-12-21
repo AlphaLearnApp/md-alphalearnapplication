@@ -51,10 +51,10 @@ class QuizWorkingActivity : AppCompatActivity() {
             navigateToPreviousQuestion()
         }
 
+        QuestionNumData.totalQestion = QuestionData.question.size
         listQuestion.addAll(QuestionNumData.listData)
         navigationNumAdapter = NavigationNumAdapter(this)
         // melakukan set panjang soal dari ukuran panjang jumlah question
-        QuestionNumData.totalQestion = QuestionData.question.size
         navigationNumAdapter.setQuestionNUm(listQuestion)
 
         binding.ibNavigation.setOnClickListener {
@@ -203,6 +203,12 @@ class QuizWorkingActivity : AppCompatActivity() {
             adapter = navigationNumAdapter
         }
 
+        navigationNumAdapter.onItemClick = { position ->
+            currentQuestionIndex = position
+            displayQuestion()
+            alertDialog.dismiss()
+        }
+
         bindingAlert.btnClose.setOnClickListener {
             alertDialog.dismiss()
         }
@@ -213,6 +219,7 @@ class QuizWorkingActivity : AppCompatActivity() {
 
     private fun onAnswerButtonClick(button: Button, index: Int) {
         resetButtonBackground()
+        navigationNumAdapter.questionNums[currentQuestionIndex].isSolve = true
         button.setBackgroundResource(R.drawable.bg_button_choose)
         selectedAnswers[currentQuestionIndex] = QuestionData.question[currentQuestionIndex].options[index]
         Log.d("QuizWorkingActivity", "Selected Answer for Question $currentQuestionIndex: ${selectedAnswers[currentQuestionIndex]}")
