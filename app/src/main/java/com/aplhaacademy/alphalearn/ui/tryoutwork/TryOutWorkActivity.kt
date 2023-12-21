@@ -17,7 +17,7 @@ import com.aplhaacademy.alphalearn.R
 import com.aplhaacademy.alphalearn.adapter.NavigationNumAdapter
 import com.aplhaacademy.alphalearn.data.dummy.QuestionData
 import com.aplhaacademy.alphalearn.data.dummy.QuestionNumData
-import com.aplhaacademy.alphalearn.data.model.Question
+import com.aplhaacademy.alphalearn.data.model.QuestionNum
 import com.aplhaacademy.alphalearn.databinding.ActivityTryOutWorkBinding
 import com.aplhaacademy.alphalearn.databinding.LayoutDialogCancelBinding
 import com.aplhaacademy.alphalearn.databinding.LayoutNavigationNumberBinding
@@ -30,7 +30,7 @@ class TryOutWorkActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTryOutWorkBinding
     private lateinit var navigationNumAdapter: NavigationNumAdapter
 
-    private var listQuestion: ArrayList<Question> = arrayListOf()
+    private var listQuestion: ArrayList<QuestionNum> = arrayListOf()
 
     private var currentQuestionIndex = 0
     private val selectedAnswers = mutableMapOf<Int, String>()
@@ -60,9 +60,10 @@ class TryOutWorkActivity : AppCompatActivity() {
     }
 
     private fun initData() {
+        QuestionNumData.totalQestion = QuestionData.question.size
         listQuestion.addAll(QuestionNumData.listData)
 
-        navigationNumAdapter = NavigationNumAdapter()
+        navigationNumAdapter = NavigationNumAdapter(this)
         navigationNumAdapter.setQuestionNUm(listQuestion)
     }
 
@@ -214,6 +215,12 @@ class TryOutWorkActivity : AppCompatActivity() {
             adapter = navigationNumAdapter
         }
 
+        navigationNumAdapter.onItemClick = { position ->
+            currentQuestionIndex = position
+            displayQuestion()
+            alertDialog.dismiss()
+        }
+
         bindingAlert.btnClose.setOnClickListener {
             alertDialog.dismiss()
         }
@@ -223,6 +230,8 @@ class TryOutWorkActivity : AppCompatActivity() {
 
     private fun onAnswerButtonClick(button: Button, index: Int) {
         resetButtonBackground()
+        // menambahkan kondisi jika dia sudah terjawab
+        navigationNumAdapter.questionNums[currentQuestionIndex].isSolve = true
         button.setBackgroundResource(R.drawable.bg_button_choose)
         selectedAnswers[currentQuestionIndex] =
             QuestionData.question[currentQuestionIndex].options[index]

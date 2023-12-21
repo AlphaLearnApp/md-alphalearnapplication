@@ -1,16 +1,20 @@
 package com.aplhaacademy.alphalearn.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.aplhaacademy.alphalearn.data.model.Question
+import com.aplhaacademy.alphalearn.R
+import com.aplhaacademy.alphalearn.data.model.QuestionNum
 import com.aplhaacademy.alphalearn.databinding.LayoutItemQuestionNumBinding
 
-class NavigationNumAdapter: RecyclerView.Adapter<NavigationNumAdapter.ViewHolder>() {
+class NavigationNumAdapter(private val context: Context): RecyclerView.Adapter<NavigationNumAdapter.ViewHolder>() {
 
-    private var questionNums = ArrayList<Question>()
+    lateinit var onItemClick: ((Int) -> Unit)
 
-    fun setQuestionNUm(newQuestion: List<Question>) {
+    var questionNums = ArrayList<QuestionNum>()
+
+    fun setQuestionNUm(newQuestion: List<QuestionNum>) {
         questionNums.clear()
         questionNums.addAll(newQuestion)
         notifyDataSetChanged()
@@ -35,6 +39,13 @@ class NavigationNumAdapter: RecyclerView.Adapter<NavigationNumAdapter.ViewHolder
 
         holder.binding.apply {
             tvNumber.text = questionNum.number.toString()
+        }
+        if (questionNum.isSolve == true) {
+            holder.binding.bgNumItem.setBackgroundColor(context.resources.getColor(R.color.colorGreen))
+        }
+
+        holder.itemView.setOnClickListener {
+            onItemClick.invoke(position)
         }
     }
 }

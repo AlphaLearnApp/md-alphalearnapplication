@@ -8,10 +8,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.GridLayoutManager
-import com.aplhaacademy.alphalearn.R
 import com.aplhaacademy.alphalearn.adapter.NavigationNumAdapter
 import com.aplhaacademy.alphalearn.data.dummy.QuestionNumData
-import com.aplhaacademy.alphalearn.data.model.Question
+import com.aplhaacademy.alphalearn.data.model.QuestionNum
 import com.aplhaacademy.alphalearn.databinding.ActivityQuizRecomBinding
 import com.aplhaacademy.alphalearn.databinding.LayoutDialogCancelBinding
 import com.aplhaacademy.alphalearn.databinding.LayoutNavigationNumberBinding
@@ -22,7 +21,7 @@ class QuizRecomActivity : AppCompatActivity() {
     private lateinit var binding: ActivityQuizRecomBinding
     private lateinit var navigationNumAdapter: NavigationNumAdapter
 
-    private var listQuestion: ArrayList<Question> = arrayListOf()
+    private var listQuestion: ArrayList<QuestionNum> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +36,7 @@ class QuizRecomActivity : AppCompatActivity() {
     private fun initData() {
         listQuestion.addAll(QuestionNumData.listData)
 
-        navigationNumAdapter = NavigationNumAdapter()
+        navigationNumAdapter = NavigationNumAdapter(this)
         navigationNumAdapter.setQuestionNUm(listQuestion)
     }
 

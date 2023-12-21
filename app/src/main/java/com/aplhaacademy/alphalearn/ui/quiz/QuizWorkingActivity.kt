@@ -17,7 +17,7 @@ import com.aplhaacademy.alphalearn.R
 import com.aplhaacademy.alphalearn.adapter.NavigationNumAdapter
 import com.aplhaacademy.alphalearn.data.dummy.QuestionData
 import com.aplhaacademy.alphalearn.data.dummy.QuestionNumData
-import com.aplhaacademy.alphalearn.data.model.Question
+import com.aplhaacademy.alphalearn.data.model.QuestionNum
 import com.aplhaacademy.alphalearn.databinding.ActivityQuizWorkingBinding
 import com.aplhaacademy.alphalearn.databinding.LayoutNavigationNumberBinding
 import com.aplhaacademy.alphalearn.ui.quizresult.QuizResultActivity
@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit
 class QuizWorkingActivity : AppCompatActivity() {
 
     private lateinit var navigationNumAdapter: NavigationNumAdapter
-    private var listQuestion: ArrayList<Question> = arrayListOf()
+    private var listQuestion: ArrayList<QuestionNum> = arrayListOf()
 
     private lateinit var binding: ActivityQuizWorkingBinding
 
@@ -52,7 +52,9 @@ class QuizWorkingActivity : AppCompatActivity() {
         }
 
         listQuestion.addAll(QuestionNumData.listData)
-        navigationNumAdapter = NavigationNumAdapter()
+        navigationNumAdapter = NavigationNumAdapter(this)
+        // melakukan set panjang soal dari ukuran panjang jumlah question
+        QuestionNumData.totalQestion = QuestionData.question.size
         navigationNumAdapter.setQuestionNUm(listQuestion)
 
         binding.ibNavigation.setOnClickListener {
