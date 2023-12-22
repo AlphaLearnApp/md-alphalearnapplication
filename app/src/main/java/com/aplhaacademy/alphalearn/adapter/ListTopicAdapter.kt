@@ -75,9 +75,9 @@ class ListTopicAdapter(private val list: List<Topic>) : RecyclerView.Adapter<Lis
 
             title.text = topic.title
             subtopic.text = topic.subtopic
-            subtopic2.text = topic.subtopic
-            subtopic3.text = topic.subtopic
-            subtopic4.text = topic.subtopic
+            subtopic2.text = topic.subtopic2
+            subtopic3.text = topic.subtopic3
+            subtopic4.text = topic.subtopic4
 
             val iconResource = if (expanded) R.drawable.baseline_expand_circle_up_24 else R.drawable.baseline_expand_circle_down_24
             expandIcon.setImageDrawable(ContextCompat.getDrawable(itemView.context, iconResource))

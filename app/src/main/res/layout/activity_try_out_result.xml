@@ -41,6 +41,7 @@
                 style="@style/textReguler" />
 
             <TextView
+                android:id="@+id/tv_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="@string/_92"

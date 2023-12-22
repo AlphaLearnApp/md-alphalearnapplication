@@ -14,6 +14,8 @@ class OptionsDialogFragment : DialogFragment() {
     private var _binding: FragmentOptionsDialogBinding? = null
     private val binding get() = _binding!!
 
+    private var score: Int = 0
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -25,8 +27,13 @@ class OptionsDialogFragment : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        score = arguments?.getInt(QuizResultActivity.EXTRA_SCORE) ?: 0
+
         binding.btnAkhiri.setOnClickListener {
-            val intent = Intent(requireActivity(), QuizResultActivity::class.java)
+            val intent = Intent(requireActivity(), QuizResultActivity::class.java).apply {
+                putExtra(QuizResultActivity.EXTRA_SCORE, score)
+            }
+
             startActivity(intent)
             activity?.finish()
         }

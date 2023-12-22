@@ -1,15 +1,12 @@
 package com.aplhaacademy.alphalearn.ui.quizresult
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.aplhaacademy.alphalearn.R
+import androidx.appcompat.app.AppCompatActivity
 import com.aplhaacademy.alphalearn.databinding.ActivityQuizResultBinding
 import com.aplhaacademy.alphalearn.ui.fragment.MainFragmentActivity
-import com.aplhaacademy.alphalearn.ui.main.MainActivity
 import com.aplhaacademy.alphalearn.ui.quiz.QuizDetailActivity
 import com.aplhaacademy.alphalearn.ui.quizrecommendation.QuizRecomActivity
-import com.aplhaacademy.alphalearn.ui.tryoutdiscuss.TryOutDiscussActivity
 
 class QuizResultActivity : AppCompatActivity() {
 
@@ -19,6 +16,9 @@ class QuizResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityQuizResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val score = intent.getIntExtra(EXTRA_SCORE, 0)
+        binding.tvScore.text = "$score %"
 
         onAction()
     }
@@ -45,5 +45,9 @@ class QuizResultActivity : AppCompatActivity() {
                 )
             }
         }
+    }
+
+    companion object{
+        const val EXTRA_SCORE = "extra_score"
     }
 }

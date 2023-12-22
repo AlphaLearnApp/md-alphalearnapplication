@@ -1,5 +1,6 @@
 package com.aplhaacademy.alphalearn.ui.quizrecommendation
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
@@ -7,35 +8,40 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.GridLayoutManager
-import com.aplhaacademy.alphalearn.R
 import com.aplhaacademy.alphalearn.adapter.NavigationNumAdapter
 import com.aplhaacademy.alphalearn.data.dummy.QuestionNumData
-import com.aplhaacademy.alphalearn.data.model.Question
+import com.aplhaacademy.alphalearn.data.model.QuestionNum
 import com.aplhaacademy.alphalearn.databinding.ActivityQuizRecomBinding
 import com.aplhaacademy.alphalearn.databinding.LayoutDialogCancelBinding
 import com.aplhaacademy.alphalearn.databinding.LayoutNavigationNumberBinding
+import com.aplhaacademy.alphalearn.ui.course.CourseVideoActivity
+import com.aplhaacademy.alphalearn.ui.main.MainActivity
 
 class QuizRecomActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityQuizRecomBinding
     private lateinit var navigationNumAdapter: NavigationNumAdapter
 
-    private var listQuestion: ArrayList<Question> = arrayListOf()
+    private var listQuestion: ArrayList<QuestionNum> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        var binding = ActivityQuizRecomBinding.inflate(layoutInflater)
+        binding = ActivityQuizRecomBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         initData()
         onAction()
 
+        binding.tvLinkSubtopic.setOnClickListener {
+            val intent = Intent(this@QuizRecomActivity, CourseVideoActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun initData() {
         listQuestion.addAll(QuestionNumData.listData)
 
-        navigationNumAdapter = NavigationNumAdapter()
+        navigationNumAdapter = NavigationNumAdapter(this)
         navigationNumAdapter.setQuestionNUm(listQuestion)
     }
 
@@ -69,7 +75,6 @@ class QuizRecomActivity : AppCompatActivity() {
         bindingAlert.btnClose.setOnClickListener {
             alertDialog.dismiss()
         }
-
         alertDialog.show()
 
     }
@@ -87,6 +92,10 @@ class QuizRecomActivity : AppCompatActivity() {
         bindingAlert.apply {
             btnDone.setOnClickListener {
                 alertDialog.dismiss()
+                startActivity(
+                    Intent(this@QuizRecomActivity, MainActivity::class.java)
+                )
+                finishAffinity()
             }
 
             btnCancel.setOnClickListener {

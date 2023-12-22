@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
@@ -16,7 +17,7 @@ import com.aplhaacademy.alphalearn.R
 import com.aplhaacademy.alphalearn.adapter.NavigationNumAdapter
 import com.aplhaacademy.alphalearn.data.dummy.QuestionData
 import com.aplhaacademy.alphalearn.data.dummy.QuestionNumData
-import com.aplhaacademy.alphalearn.data.model.Question
+import com.aplhaacademy.alphalearn.data.model.QuestionNum
 import com.aplhaacademy.alphalearn.databinding.ActivityQuizWorkingBinding
 import com.aplhaacademy.alphalearn.databinding.LayoutNavigationNumberBinding
 import com.aplhaacademy.alphalearn.ui.quizresult.QuizResultActivity
@@ -25,7 +26,7 @@ import java.util.concurrent.TimeUnit
 class QuizWorkingActivity : AppCompatActivity() {
 
     private lateinit var navigationNumAdapter: NavigationNumAdapter
-    private var listQuestion: ArrayList<Question> = arrayListOf()
+    private var listQuestion: ArrayList<QuestionNum> = arrayListOf()
 
     private lateinit var binding: ActivityQuizWorkingBinding
 
@@ -33,7 +34,7 @@ class QuizWorkingActivity : AppCompatActivity() {
     private val selectedAnswers = mutableMapOf<Int, String>()
 
     private var countdownTimer: CountDownTimer? = null
-    private val totalTimeInMillis: Long = 10000
+    private val totalTimeInMillis: Long = 600000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,8 +51,10 @@ class QuizWorkingActivity : AppCompatActivity() {
             navigateToPreviousQuestion()
         }
 
+        QuestionNumData.totalQestion = QuestionData.question.size
         listQuestion.addAll(QuestionNumData.listData)
-        navigationNumAdapter = NavigationNumAdapter()
+        navigationNumAdapter = NavigationNumAdapter(this)
+        // melakukan set panjang soal dari ukuran panjang jumlah question
         navigationNumAdapter.setQuestionNUm(listQuestion)
 
         binding.ibNavigation.setOnClickListener {
@@ -72,12 +75,18 @@ class QuizWorkingActivity : AppCompatActivity() {
         }
 
         binding.btnFinish.setOnClickListener {
-            val optionsDialogFragment = OptionsDialogFragment()
+            val optionsDialogFragment = OptionsDialogFragment().apply {
+                arguments = Bundle().apply {
+                    val correctAnswer = calculateCorrectAnswer()
+                    putInt(QuizResultActivity.EXTRA_SCORE, correctAnswer)
+                }
+            }
             val fragmentManager = supportFragmentManager
             optionsDialogFragment.show(
                 fragmentManager,
                 OptionsDialogFragment::class.java.simpleName
             )
+            finishQuiz()
         }
 
         countdownTimer = object : CountDownTimer(totalTimeInMillis, 1000) {
@@ -95,15 +104,40 @@ class QuizWorkingActivity : AppCompatActivity() {
             override fun onFinish() {
                 Toast.makeText(this@QuizWorkingActivity, "Waktu habis", Toast.LENGTH_SHORT).show()
                 finishQuiz()
+                val correctAnswer = calculateCorrectAnswer()
+                val intent = Intent(this@QuizWorkingActivity, QuizResultActivity::class.java).apply {
+                    putExtra(QuizResultActivity.EXTRA_SCORE, correctAnswer)
+                }
+                startActivity(intent)
             }
         }.start()
     }
 
     private fun finishQuiz(){
         countdownTimer?.cancel()
-        val intent = Intent(this@QuizWorkingActivity, QuizResultActivity::class.java)
-        startActivity(intent)
+
+        val correctAnswer = calculateCorrectAnswer()
+        Log.d("QuizWorkingActivity", "correct answer: $correctAnswer")
     }
+
+    private fun calculateCorrectAnswer(): Int {
+        var correctCount = 0
+        for ((index, question) in QuestionData.question.withIndex()) {
+            val selectedAnswer = selectedAnswers[index]
+            if (selectedAnswer == question.answer) {
+                correctCount++
+                Log.d("QuizWorkingActivity", "Question $index answered correctly")
+            } else {
+                Log.d(
+                    "QuizWorkingActivity",
+                    "Question $index answered incorrectly. Correct answer: ${question.answer}, Selected answer: $selectedAnswer"
+                )
+            }
+        }
+        Log.d("QuizWorkingActivity", "Total Correct Answers: $correctCount")
+        return correctCount * 3
+    }
+
     private fun navigateToNextQuestion() {
         if (currentQuestionIndex < QuestionData.question.size - 1) {
             currentQuestionIndex++
@@ -169,6 +203,12 @@ class QuizWorkingActivity : AppCompatActivity() {
             adapter = navigationNumAdapter
         }
 
+        navigationNumAdapter.onItemClick = { position ->
+            currentQuestionIndex = position
+            displayQuestion()
+            alertDialog.dismiss()
+        }
+
         bindingAlert.btnClose.setOnClickListener {
             alertDialog.dismiss()
         }
@@ -179,8 +219,11 @@ class QuizWorkingActivity : AppCompatActivity() {
 
     private fun onAnswerButtonClick(button: Button, index: Int) {
         resetButtonBackground()
+        navigationNumAdapter.questionNums[currentQuestionIndex].isSolve = true
         button.setBackgroundResource(R.drawable.bg_button_choose)
         selectedAnswers[currentQuestionIndex] = QuestionData.question[currentQuestionIndex].options[index]
+        Log.d("QuizWorkingActivity", "Selected Answer for Question $currentQuestionIndex: ${selectedAnswers[currentQuestionIndex]}")
+        calculateCorrectAnswer()
     }
 
     private fun resetButtonBackground() {
@@ -194,5 +237,10 @@ class QuizWorkingActivity : AppCompatActivity() {
         answerButtons.forEach {
             it.setBackgroundResource(R.drawable.bg_button_answer)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        countdownTimer?.cancel()
     }
 }
