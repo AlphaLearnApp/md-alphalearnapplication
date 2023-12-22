@@ -94,15 +94,16 @@ object CourseData {
     }
 
     private val courses = arrayOf(
-        "All",
         "Astronomics",
-        "Geography",
-        "Biology",
         "Chemistry",
+        "Biology",
+        "Geography",
+        "Geography",
+        "Geography",
         "Physics",
         "Mathematics",
-        "Earthiness",
         "Informatics",
+        "Earthiness",
         "Economy"
     )
 

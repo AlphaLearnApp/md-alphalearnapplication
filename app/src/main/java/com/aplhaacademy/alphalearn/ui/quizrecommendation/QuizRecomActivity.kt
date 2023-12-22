@@ -14,6 +14,7 @@ import com.aplhaacademy.alphalearn.data.model.QuestionNum
 import com.aplhaacademy.alphalearn.databinding.ActivityQuizRecomBinding
 import com.aplhaacademy.alphalearn.databinding.LayoutDialogCancelBinding
 import com.aplhaacademy.alphalearn.databinding.LayoutNavigationNumberBinding
+import com.aplhaacademy.alphalearn.ui.course.CourseVideoActivity
 import com.aplhaacademy.alphalearn.ui.main.MainActivity
 
 class QuizRecomActivity : AppCompatActivity() {
@@ -31,6 +32,10 @@ class QuizRecomActivity : AppCompatActivity() {
         initData()
         onAction()
 
+        binding.tvLinkSubtopic.setOnClickListener {
+            val intent = Intent(this@QuizRecomActivity, CourseVideoActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun initData() {

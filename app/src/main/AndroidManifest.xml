@@ -26,7 +26,7 @@
             android:name=".ui.quiz.QuizWorkingActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.login.LoginActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.quiz.QuizDetailActivity"
@@ -75,7 +75,7 @@
         </service>
 
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name=".ui.login.LoginActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

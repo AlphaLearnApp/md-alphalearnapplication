@@ -56,10 +56,10 @@
             android:gravity="center_vertical">
 
             <TextView
+                android:id="@+id/tv_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/default_text"
-                tools:text="@string/question_no_2"
+                android:text="Question no. 1"
                 android:textColor="@color/colorWhite"
                 style="@style/textBig" />
 
@@ -67,21 +67,6 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="1" />
-
-            <ImageView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:src="@drawable/baseline_access_time_24"
-                app:tint="@color/colorWhite"
-                android:layout_marginEnd="6dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/default_text"
-                tools:text="@string/_00_42_59"
-                android:textColor="@color/colorWhite"
-                style="@style/textBig" />
 
         </LinearLayout>
 
@@ -112,8 +97,7 @@
                         android:id="@+id/tv_text_question"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/default_text"
-                        tools:text="@string/you_have_completed_the_tryout_nyou_have_scored"
+                        android:text="Keterkaitan semua subsistem iklim yang berbeda tetapi saling berinteraksi dan terintegrasi disebut sebagai"
                         android:textSize="14sp"
                         android:textColor="@color/colorBlack"
                         android:fontFamily="@font/mulish_medium" />
@@ -128,14 +112,14 @@
                             android:id="@+id/rb_option_a"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
-                            android:background="@drawable/rb_unchecked"
+                            android:background="@drawable/rb_right_answer"
                             android:gravity="center_vertical"
                             android:paddingHorizontal="20dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="A. March 21"
+                                android:text="Sistem Iklim"
                                 style="@style/textBig" />
 
                         </LinearLayout>
@@ -152,7 +136,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="B. August 45"
+                                android:text="Cuaca"
                                 style="@style/textBig" />
 
                         </LinearLayout>
@@ -169,7 +153,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="C. March 22"
+                                android:text="Sistem Cuaca"
                                 style="@style/textBig" />
 
                         </LinearLayout>
@@ -186,7 +170,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="D. April 45"
+                                android:text="Siklus perubahan iklim"
                                 style="@style/textBig" />
 
                         </LinearLayout>
@@ -205,7 +189,7 @@
                         android:id="@+id/tv_link_subtopic"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/link_of_title_of_subtopic"
+                        android:text="Iklim dan Perubahan Iklim"
                         style="@style/textBig"
                         android:textColor="@color/colorPrimary"
                         android:fontFamily="@font/mulish_medium"

@@ -33,7 +33,6 @@ class TryOutDiscussActivity : AppCompatActivity() {
         initData()
         onAction()
 
-
     }
 
     private fun initData() {
